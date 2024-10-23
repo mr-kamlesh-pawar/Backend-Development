@@ -20,7 +20,7 @@ exports.createTodo= async(req,res)=>{
         //send a json response
         res.status(200).json(
             {
-                sucess:true,
+                success:true,
                 data:response,
                 message:"Entry Created Sucessfully"
             }
@@ -31,7 +31,7 @@ exports.createTodo= async(req,res)=>{
         console.error(err);
         res.status(500)
         .json({
-            sucess: false,
+            success: false,
             data:"Internal Server Error",
             message:err.message,
 
