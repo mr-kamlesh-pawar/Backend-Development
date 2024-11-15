@@ -1,6 +1,11 @@
 // 1. create folder
 // 2. command- npm init -y
-// 3. command- npm install express
+// 3. command- npm install express, nodemon
+// "scripts": {
+//     "test": "echo \"Error: no test specified\" && exit 1",
+//     "start": "node index.js",
+//     "dev":"nodemon index.js"
+//   },
 // 4. new file server.js
 
 const express= require('express');
