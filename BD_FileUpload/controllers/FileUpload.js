@@ -50,6 +50,7 @@ exports.imageUpload= async (req,res)=>{
     try{
         //fetch data
         const {name, tag, email}= req.body;
+        
         console.log(name , tag, email);
 
         //fetch file
@@ -63,7 +64,7 @@ exports.imageUpload= async (req,res)=>{
 
         //if  not supported
         if(!isFileTypeSuppoerted(fileType, supportedTypes)){
-            res.status(400).json({
+            return res.status(400).json({
                 success: false,
                 message: "File type is not supported",
 
@@ -123,7 +124,7 @@ exports.videoUpload= async (req, res)=>{
 
         //PENDING: add limit of 5mb
 
-        if(!isFileTypeSuppoerted(type, supportedTypes)){
+        if(!isFileTypeSuppoerted(fileType, supportedTypes)){
             return res.status(400).json({
                 success: false,
                 message: "Video file type is not Supported"
@@ -134,7 +135,7 @@ exports.videoUpload= async (req, res)=>{
         console.log("Uploading a file on clodinary..");
 
         const response=await uploadFileToCloudinary(file, "Kpawar");
-        console.log(response);
+        console.log("Video Response: ",response);
 
 
         //db me entry save karni hai
@@ -187,7 +188,7 @@ exports.imageSizeReducer= async (req,res)=>{
 
         //if  not supported
         if(!isFileTypeSuppoerted(fileType, supportedTypes)){
-            res.status(400).json({
+            return res.status(400).json({
                 success: false,
                 message: "File type is not supported",
 

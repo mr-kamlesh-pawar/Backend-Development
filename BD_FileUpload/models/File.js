@@ -11,12 +11,19 @@ const fileSchema= new mongoose.Schema({
     imageUrl:{
         type:String,
         
+        
     },
-    tags:{
-        type:String
+    tag:{
+        type:String,
+        required:true
+       
     },
     email:{
-        type: String
+        type: String,
+        required:true
+    },
+    videoUrl:{
+        type:String, 
     }
 });
 
